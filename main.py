@@ -8,7 +8,7 @@ import requests
 import json
 
 #Functions
-token = '66a6ec073dc3b97a43174e895d064c39'
+token = '028b145f7c73cfd327622973a500c87d'
 URL = 'https://pokemonbattle.me'
 host = 5000
 
