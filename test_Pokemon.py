@@ -3,7 +3,7 @@
     # 2. response with a name of trainer
 
 #Functions
-token = '028b145f7c73cfd327622973a500c87d'
+token = 'token'
 
 import requests
 import pytest
