@@ -1,24 +1,28 @@
-#Tasks
-    # 1. request get.trainers == 200
-    # 2. response with a name of trainer
+import requests
+import json
+import pytest
 
 #Functions
-token = '66a6ec073dc3b97a43174e895d064c39'
 
-import requests
-import pytest
-import json
+token = '028b145f7c73cfd327622973a500c87d'
+URL = 'https://pokemonbattle.me'
+host = 5000
+
+#PokemonCreate
+response = requests.post(f'{URL}:{host}/pokemons', headers={'trainer_token' : token}, json={
+        'name' : 'Raichu',
+        'photo' : 'https://w7.pngwing.com/pngs/937/801/png-transparent-pokemon-go-pokemon-battle-revolution-computer-icons-video-game-pokemon-go-game-video-game-pokemon.png'
+    })
+
+#ChangePokemon
+response = requests.put(f'{URL}:{host}/pokemons', headers={'trainer_token' : token}, json={
+        'pokemon_id' : 2620,
+        'name' : 'Colossus',
+        'photo' : 'https://w7.pngwing.com/pngs/937/801/png-transparent-pokemon-go-pokemon-battle-revolution-computer-icons-video-game-pokemon-go-game-video-game-pokemon.png'
+    })
 
 
-def test_status_code():
-    response = requests.get('https://pokemonbattle.me:5000/trainers')
-    if response.status_code == 200:
-        print('okay')
-    else:
-        print('not ok')
-
-def test_piece_of_body():
-    response = requests.get('https://pokemonbattle.me:5000/trainers', params= {'trainer_id' : '1141'})
-    assert response.json()['trainer_name'] == 'Sam'
-
-    print(response.text)
+#CatchPokemon
+response = requests.post(f'{URL}:{host}/trainers/addPokebol', headers={'trainer_token' : token}, json={
+        'pokemon_id' : 2620,
+        })
