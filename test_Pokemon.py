@@ -12,13 +12,10 @@ import json
 
 def test_status_code():
     response = requests.get('https://pokemonbattle.me:5000/trainers')
-    if response.status_code == 200:
-        print('okay')
-    else:
-        print('not ok')
+    print(response)
 
 def test_piece_of_body():
-    response = requests.get('https://pokemonbattle.me:5000/trainers', params= {'trainer_id' : '1141'})
+    response = requests.get('https://pokemonbattle.me:5000/trainers', params= {'trainer_id' : '1602'})
     assert response.json()['trainer_name'] == 'Sam'
 
-    print(response.text)
+    print(response)
