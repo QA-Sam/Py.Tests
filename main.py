@@ -9,7 +9,10 @@ import json
 import pytest
 
 #Functions
+<<<<<<< HEAD
 
+=======
+>>>>>>> dde6f78043234fc934c1a6ef76ccd636e92c46ad
 token = '028b145f7c73cfd327622973a500c87d'
 URL = 'https://pokemonbattle.me'
 host = 5000
@@ -30,7 +33,13 @@ response = requests.put(f'{URL}:{host}/pokemons', headers={'trainer_token' : tok
 print(response)
 
 #CatchPokemon
+<<<<<<< HEAD
 response = requests.post(f'{URL}:{host}/trainers/add_pokeball', headers={'trainer_token' : token}, json={
         'pokemon_id' : 2780,
         })
 print(response)
+=======
+response = requests.post(f'{URL}:{host}/trainers/addPokebol', headers={'trainer_token' : token}, json={
+        'pokemon_id' : 1463,
+        })
+>>>>>>> dde6f78043234fc934c1a6ef76ccd636e92c46ad
